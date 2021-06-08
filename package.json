@@ -1,24 +1,43 @@
 {
-  "name": "codrops-demo",
+  "name": "webgl2-2d-metaballs",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Tutorial on implementing 2D metaballs using WebGL2",
+  "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "webpack --watch",
-    "start": "webpack-dev-server --open",
-    "build": "webpack"
+    "watch": "rollup -c -w",
+    "build": "rollup -c",
+    "serve": "http-server ./dist",
+    "start:dev": "run-p serve watch",
+    "start": "run-p serve build"
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "glslify": "^7.0.0",
-    "three": "^0.106.2"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gnikoloff/webgl2-2d-metaballs.git"
   },
+  "keywords": [
+    "metaballs",
+    "webgl2",
+    "webgl"
+  ],
+  "author": "Georgi Nikolov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gnikoloff/webgl2-2d-metaballs/issues"
+  },
+  "homepage": "https://github.com/gnikoloff/webgl2-2d-metaballs#readme",
   "devDependencies": {
-    "webpack": "^4.35.3",
-    "webpack-cli": "^3.3.5",
-    "webpack-dev-server": "^3.7.2",
-    "webpack-glsl-loader": "^1.0.1"
+    "npm-run-all": "^4.1.5",
+    "rollup": "^2.35.1",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0"
+  },
+  "dependencies": {
+    "dat.gui": "^0.7.7",
+    "glsl-film-grain": "^1.0.4",
+    "lodash.throttle": "^4.1.1",
+    "rollup-plugin-glslify": "^1.2.0",
+    "webfontloader": "^1.6.28"
   }
 }
